@@ -2,10 +2,6 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const PurgePrikaz = '!!BURN*HERETIC*BURN!!'; 
 
-client.on('ready', () => {
-    console.log('Sloužím vlasti!');
-});
-
 client.on('message', message => {
     
     //Promenne
@@ -25,6 +21,15 @@ client.on('message', message => {
     if (msg.startsWith(PurgePrikaz)) {
         async function purge() {
             message.delete();  //smaže mazací příkaz, ať se neplete
+            
+            //pojistka
+            if (isNaN(args[0])) {
+             
+                message.channel.send('Prosím, zadej číslo, jako argument. \n Usage: '+ PurgePrikaz + 'smazat <kolik>');
+                return;
+            }
+
+            
         
             const fetched = await message.channel.fetchMessages({limit: args[0]}); // vezme poslední číslo zprávy v kanálu
             console.log(fetched.size + ' hříšných knih házím na hořící hranici...'); //vzkaz do console, kolik zpráv je smazáno
@@ -38,6 +43,10 @@ client.on('message', message => {
     }
         
         
+});
+
+client.on('ready', () => {
+    console.log('Sloužím vlasti!');
 });
 
 // THIS  MUST  BE  THIS  WAY
