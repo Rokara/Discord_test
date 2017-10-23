@@ -2,14 +2,14 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 client.on('ready', () => {
-    console.log('I am ready!');
+    console.log('Sloužím vlasti!');
 });
 
 client.on('message', message => {
     if (message.content === 'ping') {
-    	message.reply('pong');
+    	message.reply('pong, vole!');
   	}
 });
 
 // THIS  MUST  BE  THIS  WAY
-client.login('MzcxODk1NTc1NzQ0MDg2MDI4.DM_GeA.Ke4KOLKOeVD3X8iSVJYpa9tQRLA');
+client.login(process.env.BOT_TOKEN);
