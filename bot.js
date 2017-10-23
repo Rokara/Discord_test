@@ -1,3 +1,4 @@
+// JavaScript Document
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = '*'; 
@@ -18,29 +19,29 @@ client.on('message', message => {
    // if (message.channel.id === '280243963909242880') {
    // message.delete()
    // }
-    if (msg.startsWith(prefix + 'PURGE')) {
-        async function purge() {
-            message.delete();  //smaže mazací příkaz, ať se neplete
-            
-            //pojistka
-            if (isNaN(args[0])) {
-             
-                message.channel.send('Prosím, zadej číslo, jako argument. \n Usage: '+ prefix + 'smazat <kolik>');
-                return;
-            }
-
-            
-        
-            const fetched = await message.channel.fetchMessages({limit: args[0]}); // vezme poslední číslo zprávy v kanálu
-            console.log(fetched.size + ' hříšných knih házím na hořící hranici...'); //vzkaz do console, kolik zpráv je smazáno
-            
-            //mažeme zprávy
-            message.channel.bulkDelete(fetched)
-                .catch(error => message.channel.send(`Error: ${error}`)); //V případě chyby, postne tuto do kanálu
-        }
-        //
-        purge();
-    }
+//     if (msg.startsWith(prefix + 'PURGE')) {
+//         async function purge() {
+//             message.delete();  //smaže mazací příkaz, ať se neplete
+//             
+//             //pojistka
+//             if (isNaN(args[0])) {
+//              
+//                 message.channel.send('Prosím, zadej číslo, jako argument. \n Usage: '+ prefix + 'smazat <kolik>');
+//                 return;
+//             }
+// 
+//             
+//         
+//             const fetched = await message.channel.fetchMessages({limit: args[0]}); // vezme poslední číslo zprávy v kanálu
+//             console.log(fetched.size + ' hříšných knih házím na hořící hranici...'); //vzkaz do console, kolik zpráv je smazáno
+//             
+//             //mažeme zprávy
+//             message.channel.bulkDelete(fetched)
+//                 .catch(error => message.channel.send(`Error: ${error}`)); //V případě chyby, postne tuto do kanálu
+//         }
+//         //
+//         purge();
+//     }
         
         
 });
