@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const PurgePrikaz = '!!BurnHereticBurn!!'; 
+const PurgePrikaz = '!!BURN*HERETIC*BURN!!'; 
 
 client.on('ready', () => {
     console.log('Sloužím vlasti!');
