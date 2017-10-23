@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const PurgePrikaz = '!!BURN*HERETIC*BURN!!'; 
+const prefix = '*'; 
 
 client.on('message', message => {
     
@@ -11,21 +11,21 @@ client.on('message', message => {
     let args = cont.slice(1);
     
       
-    if (msg === 'PING') {
+    if (msg === prefix + 'PING') {
     	message.reply('pong, vole!');
   	}
     // maže zprávy (ale check je při vytvoření, zpětně nefunguje
    // if (message.channel.id === '280243963909242880') {
    // message.delete()
    // }
-    if (msg.startsWith(PurgePrikaz)) {
+    if (msg.startsWith(prefix + 'PURGE')) {
         async function purge() {
             message.delete();  //smaže mazací příkaz, ať se neplete
             
             //pojistka
             if (isNaN(args[0])) {
              
-                message.channel.send('Prosím, zadej číslo, jako argument. \n Usage: '+ PurgePrikaz + 'smazat <kolik>');
+                message.channel.send('Prosím, zadej číslo, jako argument. \n Usage: '+ prefix + 'smazat <kolik>');
                 return;
             }
 
