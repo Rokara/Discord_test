@@ -11,6 +11,9 @@ client.on('message', message => {
     //Promenne
     let msg = message.content.toUpperCase(); //Promena udela z celeho textu velka pismena a stane se to tak case insensitive
     let sender = message.author; // Promenna si ulozi autora zpravy
+    let cont = message.content.slice(prefix.lenght).split(" ");
+    let args = cont.slice(1);
+    
       
     if (msg === 'PING') {
     	message.reply('pong, vole!');
