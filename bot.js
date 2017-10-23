@@ -9,9 +9,10 @@ client.on('message', message => {
     if (message.content === 'ping') {
     	message.reply('pong, vole!');
   	}
-    if (message.channel.id === '280243963909242880') {
-    message.delete()
-    }
+    // maže zprávy (ale check je při vytvoření, zpětně nefunguje
+   // if (message.channel.id === '280243963909242880') {
+   // message.delete()
+   // }
 });
 
 // THIS  MUST  BE  THIS  WAY
