@@ -12,7 +12,7 @@ client.on('message', message => {
     let msg = message.content.toUpperCase(); //Promena udela z celeho textu velka pismena a stane se to tak case insensitive
     let sender = message.author; // Promenna si ulozi autora zpravy
       
-    if (msg.content === 'PING') {
+    if (msg === 'PING') {
     	message.reply('pong, vole!');
   	}
     // maže zprávy (ale check je při vytvoření, zpětně nefunguje
